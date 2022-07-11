@@ -1,5 +1,8 @@
 version: '3.8'
 
+volumes:
+  mysql_volume:
+
 services:
   application:
     container_name: application
@@ -43,6 +46,8 @@ services:
     restart: always
     ports:
       - 1010:80
+    volumes:
+      - "mysql_volume:/var/lib/mysql"
     environment:
       PMA_ARBITRARY: 1
       PMA_HOST: mysql

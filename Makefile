@@ -11,17 +11,17 @@ help: ## Show this help message
 
 start: ## Start the containers
 	docker network create application-network || true
-	U_ID=${UID} docker-compose up -d
+	U_ID=${UID} docker compose up -d
 
 stop: ## Stop the containers
-	U_ID=${UID} docker-compose stop
+	U_ID=${UID} docker compose down
 
 restart: ## Restart the containers
 	$(MAKE) stop && $(MAKE) start
 
 build: ## Rebuilds all the containers
 	docker network create application_network || true
-	U_ID=${UID} docker-compose build --no-cache
+	U_ID=${UID} docker compose build --no-cache
 
 prepare: ## Runs backend commands
 	$(MAKE) composer-install
