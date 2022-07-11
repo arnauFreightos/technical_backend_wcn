@@ -9,8 +9,6 @@ class TechnicalTestInterviewSummaryController
 {
     public function __invoke(Request $request): Response
     {
-
-            return  new Response("hello world 5");
-
+        return new Response("Hello world!");
     }
 }
