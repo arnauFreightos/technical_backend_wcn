@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  application:
+    container_name: application
+    build:
+      context: ./docker
+      args:
+        UID: $U_ID
+    volumes:
+      - ./:/var/www
+      - ./docker/apache/site.conf:/etc/apache2/sites-enabled/000-default.conf
+    ###> XDEBUG 3 ###
+    # Use your client IP here
+    # Linux: run "ip a | grep docker0"
+    # Windows (with WSL2) and Mac: host.docker.internal
+    environment:
+      XDEBUG_CLIENT_HOST: host.docker.internal
+      XDEBUG_CLIENT_PORT: 9003
+      PHP_IDE_CONFIG: serverName=application
+    ports:
+      - 1000:80
+    networks:
+      - application-network
+
+  mysql:
+      image: mysql
+      command: --default-authentication-plugin=mysql_native_password
+      restart: always
+      environment:
+        MYSQL_DATABASE: 'technical-test'
+        # So you don't have to use root, but you can if you like
+        MYSQL_USER: 'user'
+        # You can use whatever password you like
+        MYSQL_PASSWORD: 'password'
+        # Password for root access
+        MYSQL_ROOT_PASSWORD: 'password'
+      networks:
+        - db-network
+        
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 1010:80
+    environment:
+      PMA_ARBITRARY: 1
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+    networks:
+          - db-network
+
+networks:
+  application-network:
+  db-network:
+

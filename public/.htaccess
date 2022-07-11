@@ -1,0 +1,19 @@
+RewriteEngine On
+RewriteBase /
+#Principal
+#RewriteCond %{REQUEST_URI} !^/index\.html$
+RewriteRule ^(.*)$ index.php?full_url_raw=$1 [QSA,L]
+
+#CORS and COOKIES
+#Header always set Strict-Transport-Security "max-age=63072000; includeSubdomains;"
+#SetEnvIf Origin ^((https|http)?://.+\.(webcargo.com|localhost\:3000)(?::\d{1,5})?)$  CORS_ALLOW_ORIGIN=$1
+#Header always set Access-Control-Allow-Origin %{CORS_ALLOW_ORIGIN}e  env=CORS_ALLOW_ORIGIN
+#Header always set Access-Control-Allow-Headers: "Authorization, Content-Type"
+#Header always set Access-Control-Allow-Credentials: true
+#Header always set Access-Control-Allow-Methods "POST, PUT, GET, DELETE, OPTIONS"
+
+
+
+
+
+

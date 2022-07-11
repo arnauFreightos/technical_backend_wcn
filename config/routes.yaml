@@ -1,0 +1,7 @@
+controllers:
+    resource: ../apps/controllers/
+    type: attribute
+
+app_product:
+    path: /explanation
+    controller: apps\controllers\TechnicalTestInterviewSummaryController
