@@ -27,6 +27,8 @@ If you want to see the available options for make tool type "make help"
 3. docker exec -it application bash
 4. composer install
 
+##.env
+copy .env.example renamed to .env
 
 ### ✅ Test Excecution
 
