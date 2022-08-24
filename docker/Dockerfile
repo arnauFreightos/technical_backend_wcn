@@ -35,7 +35,7 @@ RUN mv php-cs-fixer /usr/local/bin/php-cs-fixer
 USER appuser
 RUN wget https://get.symfony.com/cli/installer -O - | bash
 USER root
-RUN mv /home/appuser/.symfony/bin/symfony /usr/local/bin/symfony
+RUN curl -sS https://get.symfony.com/cli/installer | bash -s - --install-dir /usr/local/bin/symfony
 
 RUN mkdir -p /appdata/www
 
