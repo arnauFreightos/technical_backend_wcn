@@ -21,8 +21,8 @@ class TechnicalTestInterviewSummaryController extends AbstractController
     {
         //$connection example
 //        $mbd = $this->connection->connection();
-//        foreach($mbd->query('SELECT * from users') as $fila) {
-//            var_dump($fila);
+//        foreach($mbd->query('SELECT * from users') as $row) {
+//            var_dump($row);
 //        }
 
 
