@@ -19,12 +19,12 @@ class TechnicalTestInterviewSummaryController extends AbstractController
 
     public function __invoke(Request $request): Response
     {
-        $mbd = $this->connection->connection();
-        foreach($mbd->query('SELECT * from users') as $fila) {
-            var_dump($fila);
-        }
+        //$connection example
+//        $mbd = $this->connection->connection();
+//        foreach($mbd->query('SELECT * from users') as $fila) {
+//            var_dump($fila);
+//        }
 
-        die;
 
         return new Response("Hello world!");
 
