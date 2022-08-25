@@ -32,7 +32,7 @@ copy .env.example renamed to .env
 
 ### ✅ Test Excecution
 
-Url: http://localhost:1000/hello-word
+Url: http://localhost:1000/hello-world
 
 ##Database
 MySql Access:
