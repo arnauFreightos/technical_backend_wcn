@@ -28,7 +28,7 @@ If you want to see the available options for make tool type "make help"
 4. composer install
 
 ## .env
-copy .env.example renamed to .env
+copy .env.example renamed to .env.local
 
 ### ✅ Test Excecution
 
