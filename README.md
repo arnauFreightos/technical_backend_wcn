@@ -30,7 +30,7 @@ If you want to see the available options for make tool type "make help"
 ## .env
 copy .env.example renamed to .env.local
 
-### ✅ Test Excecution
+### ✅ Test Execution
 
 Url: http://localhost:1000/hello-world
 
