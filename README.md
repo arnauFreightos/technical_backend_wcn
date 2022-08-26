@@ -34,7 +34,7 @@ copy .env.example renamed to .env.local
 
 Url: http://localhost:1000/hello-world
 
-##Database !
+##Database 
 MySql Access:
 - Url: http://localhost:1010
 - Server: mysql
