@@ -7,7 +7,7 @@ RUN apt-get upgrade && apt-get update -y
 RUN a2enmod rewrite headers ssl actions session session_cookie cgi auth_digest dav dav_fs include suexec
 
 # Create user and some useful stuff
-RUN adduser -u ${UID} --disabled-password --gecos "" appuser
+RUN if [ "${UID}" > 0] ; then adduser -u ${UID} --disabled-password --gecos "" appuser ; else adduser --disabled-password --gecos "" appuser  ; fi;
 RUN mkdir /home/appuser/.ssh
 RUN chown -R appuser:appuser /home/appuser/
 RUN echo "StrictHostKeyChecking no" >> /home/appuser/.ssh/config

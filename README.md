@@ -22,7 +22,7 @@ If you want to see the available options for make tool type "make help"
 
 ## 🛠️ (Option B) Installation with docker compose 
 
-1. docker compose build --build-arg UID=1001 --no-cache
+1. docker compose build
 2. docker compose up -d
 3. docker exec -it application bash
 4. composer install

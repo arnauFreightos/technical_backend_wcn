@@ -19,10 +19,10 @@ class TechnicalTestInterviewSummaryController extends AbstractController
 
     public function __invoke(Request $request): Response
     {
-        //$connection example
-//        $mbd = $this->connection->connection();
+        //$connection example. Before test SQL create table "users" with fields -> ID (int autoincrement), email (varchar 255)
+        $mbd = $this->connection->connection();
 //        foreach($mbd->query('SELECT * from users') as $row) {
-//            var_dump($row);
+//            print_r($row);
 //        }
 
 
